@@ -1,7 +1,8 @@
+import { Layout } from "src/components/Layout";
 import { Card, Form, Grid, Button, Icon, Confirm } from "semantic-ui-react";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Task } from "@/interfaces/Task";
+import { Task } from "src/interfaces/Tasks";
 
 type ChangeInputHandler = ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
 
@@ -9,7 +10,8 @@ const inititalState = {
   title: "",
   description: "",
 };
-export default function NewPage() {
+
+const NewPage = (): JSX.Element => {
   const [task, setTask] = useState<Task>(inititalState);
   const [loading, setLoading] = useState(false);
   const [openConfirm, setOpenConfirm] = useState(false);
@@ -73,26 +75,49 @@ export default function NewPage() {
   useEffect(() => {
     if (typeof router.query.id === "string") loadTask(router.query.id);
   }, [router.query]);
+
   return (
-    <div>
-      <Card>
-        <Card.Content>
-          <Form onSubmit={handleSubmit}>
-            <Form.Field>
-              <label htmlFor="title">Title:</label>
-              <input type="text" placeholder="Write your title" name="title" onChange={handleChange} />
-            </Form.Field>
-            <Form.Field>
-              <label htmlFor="description">description:</label>
-              <textarea name="description" rows={2} placeholder="Write a description" onChange={handleChange} />
-              <Button>
-                <Icon name="save" />
-                Save
-              </Button>
-            </Form.Field>
-          </Form>
-        </Card.Content>
-      </Card>
-    </div>
+    <Layout>
+      <Grid centered columns={3} verticalAlign="middle" style={{ height: "70%" }}>
+        <Grid.Column>
+          <Card>
+            <Card.Content>
+              <Form onSubmit={handleSubmit}>
+                <Form.Field>
+                  <label htmlFor="title">Title</label>
+                  <input type="text" placeholder="Write a title" name="title" onChange={handleChange} value={task.title} autoFocus />
+                </Form.Field>
+                <Form.Field>
+                  <label htmlFor="description">Description:</label>
+                  <textarea name="description" id="description" rows={2} placeholder="Write a Description" onChange={handleChange} value={task.description}></textarea>
+                </Form.Field>
+                {router.query.id ? (
+                  <Button color="teal" loading={loading}>
+                    <Icon name="save" />
+                    Update
+                  </Button>
+                ) : (
+                  <Button primary loading={loading}>
+                    <Icon name="save" />
+                    Save
+                  </Button>
+                )}
+              </Form>
+            </Card.Content>
+          </Card>
+
+          {router.query.id && (
+            <Button inverted color="red" onClick={() => setOpenConfirm(true)}>
+              <Icon name="trash" />
+              Delete
+            </Button>
+          )}
+        </Grid.Column>
+      </Grid>
+
+      <Confirm header="Delete a Task" content={`Are you sure you want to delete task ${router.query.id}`} open={openConfirm} onCancel={() => setOpenConfirm(false)} onConfirm={() => typeof router.query.id === "string" && handleDelete(router.query.id)} />
+    </Layout>
   );
-}
+};
+
+export default NewPage;
