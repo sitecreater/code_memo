@@ -1,4 +1,4 @@
-import { Task } from "src/interfaces/Task";
+import { Task } from "@/interfaces/Task";
 
 interface Props {
   tasks: Task[];
