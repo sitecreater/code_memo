@@ -35,7 +35,7 @@ const Home = ({ tasks }: Props) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const res = await fetch("https://post-it-drab.vercel.app/api/tasks");
+  const res = await fetch("http://localhost:3000/api/tasks");
   const tasks = await res.json();
 
   return {
