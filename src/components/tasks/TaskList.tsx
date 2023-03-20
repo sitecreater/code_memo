@@ -16,7 +16,8 @@ export const TaskList = ({ tasks = [] }: Props) => {
           <Card onClick={() => router.push(`/tasks/edit/${task.id}`)} key={task.id}>
             <Card.Content>
               <Card.Header>{task.title}</Card.Header>
-              {/* ... */}
+              <Card.Description>{task.description}</Card.Description>
+              {task.created_on && <Card.Meta>{new Date(task.created_on).toLocaleDateString()}</Card.Meta>}
             </Card.Content>
           </Card>
         ))}

@@ -7,7 +7,7 @@ export const Layout = ({ children }: { children: JSX.Element | JSX.Element[] }) 
       <Navbar />
       <main
         style={{
-          backgroundColor: "#212121",
+          backgroundColor: "#white",
         }}
       >
         <Container
