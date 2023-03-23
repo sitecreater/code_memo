@@ -1,10 +1,10 @@
 import { GetServerSideProps } from "next";
 import { Button, Grid } from "semantic-ui-react";
-import { Layout } from "src/components/Layout";
+import { Layout } from "@/components/Layout";
 import { BiTaskX } from "react-icons/bi";
-import { TaskList } from "src/components/tasks/TaskList";
+import { TaskList } from "@/components/tasks/TaskList";
 import { useRouter } from "next/router";
-import { Task } from "src/interfaces/Tasks";
+import { Task } from "@/interfaces/Tasks";
 
 interface Props {
   tasks: Task[];
@@ -21,8 +21,8 @@ const Home = ({ tasks }: Props) => {
             <Grid.Column>
               <div style={{ color: "#eee", textAlign: "center" }}>
                 <BiTaskX size="15rem" />
-                <h1>No tasks yet</h1>
-                <Button onClick={() => push("/tasks/new")}>Create one</Button>
+                <h1>아무것도 없어요😢</h1>
+                <Button onClick={() => push("/tasks/new")}>메모하기</Button>
               </div>
             </Grid.Column>
           </Grid.Row>

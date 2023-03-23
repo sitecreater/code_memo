@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { conn } from "src/utils/database";
+import { conn } from "@/utils/database";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async function (req: NextApiRequest, res: NextApiResponse) {

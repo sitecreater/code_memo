@@ -9,13 +9,15 @@ export const Navbar = () => {
     <Menu inverted attached style={{ padding: "0.5rem" }} color="yellow">
       <Container>
         <Menu.Item onClick={() => router.push("/")}>
-          <Image width="30" height="35" src="https://react.semantic-ui.com/logo.png" alt="nextjs logo" />
+          <div style={{ color: "black" }}>
+            <h2>Memo✍️</h2>
+          </div>
         </Menu.Item>
 
         <Menu.Menu position="right">
           <Menu.Item>
             <Button onClick={() => router.push("/tasks/new")} primary>
-              New Task
+              메모 하기
             </Button>
           </Menu.Item>
         </Menu.Menu>

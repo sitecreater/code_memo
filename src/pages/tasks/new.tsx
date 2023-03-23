@@ -1,8 +1,8 @@
-import { Layout } from "src/components/Layout";
+import { Layout } from "@/components/Layout";
 import { Card, Form, Grid, Button, Icon, Confirm } from "semantic-ui-react";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Task } from "src/interfaces/Tasks";
+import { Task } from "@/interfaces/Tasks";
 
 type ChangeInputHandler = ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
 
@@ -78,28 +78,28 @@ const NewPage = (): JSX.Element => {
 
   return (
     <Layout>
-      <Grid centered columns={3} verticalAlign="middle" style={{ height: "70%" }}>
+      <Grid centered columns={3} verticalAlign="middle" style={{ height: "80%" }}>
         <Grid.Column>
           <Card>
             <Card.Content>
               <Form onSubmit={handleSubmit}>
                 <Form.Field>
-                  <label htmlFor="title">Title</label>
-                  <input type="text" placeholder="Write a title" name="title" onChange={handleChange} value={task.title} autoFocus />
+                  <label htmlFor="title">제목</label>
+                  <input type="text" placeholder="제목" name="title" onChange={handleChange} value={task.title} autoFocus />
                 </Form.Field>
                 <Form.Field>
-                  <label htmlFor="description">Description:</label>
-                  <textarea name="description" id="description" rows={2} placeholder="Write a Description" onChange={handleChange} value={task.description}></textarea>
+                  <label htmlFor="description">내용:</label>
+                  <textarea name="description" id="description" rows={2} placeholder="내용" onChange={handleChange} value={task.description}></textarea>
                 </Form.Field>
                 {router.query.id ? (
                   <Button color="teal" loading={loading}>
                     <Icon name="save" />
-                    Update
+                    수정하기
                   </Button>
                 ) : (
                   <Button primary loading={loading}>
                     <Icon name="save" />
-                    Save
+                    저장하기
                   </Button>
                 )}
               </Form>
@@ -109,13 +109,13 @@ const NewPage = (): JSX.Element => {
           {router.query.id && (
             <Button inverted color="red" onClick={() => setOpenConfirm(true)}>
               <Icon name="trash" />
-              Delete
+              삭제
             </Button>
           )}
         </Grid.Column>
       </Grid>
-
-      <Confirm header="Delete a Task" content={`Are you sure you want to delete task ${router.query.id}`} open={openConfirm} onCancel={() => setOpenConfirm(false)} onConfirm={() => typeof router.query.id === "string" && handleDelete(router.query.id)} />
+      {/* ${router.query.id} */}
+      <Confirm header="메모 삭제" content={`정말 삭제하시겠습니까?`} open={openConfirm} onCancel={() => setOpenConfirm(false)} onConfirm={() => typeof router.query.id === "string" && handleDelete(router.query.id)} />
     </Layout>
   );
 };
