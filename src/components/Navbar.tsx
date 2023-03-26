@@ -10,7 +10,7 @@ export const Navbar = () => {
       <Container>
         <Menu.Item onClick={() => router.push("/")}>
           <div style={{ color: "black" }}>
-            <h2>Memo✍️</h2>
+            <h2>Memohae✍️</h2>
           </div>
         </Menu.Item>
 
