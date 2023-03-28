@@ -6,14 +6,14 @@
 - index page(empty)
 <p align="center"><img src="https://user-images.githubusercontent.com/85089341/228165597-3c25adb6-3bc9-464c-a7cc-93457a163114.png" width="700" height="350"></p>
 
-- post page
+- new page(POST)
 <p align="center"><img src="https://user-images.githubusercontent.com/85089341/228167082-581f3cab-1b88-4962-931c-7fd04085b107.png" width="700" height="350"></p>
 
-- index page
+- index page(GET)
 <p align="center"><img src="https://user-images.githubusercontent.com/85089341/228166875-02fa2389-6574-4360-9103-f589d614f97d.png" width="700" height="350"></p>
 
-- delete page
-<p align="center"><img src="https://user-images.githubusercontent.com/85089341/228167817-3a7becf4-64e9-4155-b38d-ec5344af1295.png" width="700" height="350"></p>
-
-- put page
+- edit page(PUT)
 <p align="center"><img src="https://user-images.githubusercontent.com/85089341/228167191-ea46e1f2-f9a0-42db-955e-38afd33cd3da.png" width="700" height="350"></p>
+
+- edit page(DELETE)
+<p align="center"><img src="https://user-images.githubusercontent.com/85089341/228167817-3a7becf4-64e9-4155-b38d-ec5344af1295.png" width="700" height="350"></p>
