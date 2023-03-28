@@ -1,7 +1,7 @@
 # code_memohae
 
-> REST API로 동작하는 클라이언트 개발 프로젝트입니다. 간단한 메모 사이트로 작업을 했고,
-> <br>로컬에서 개발된 웹 사이트를 EC2와 RDS를 이용하여 외부에서 접속 가능한 서버에 배포하는 것까지 진행했습니다.</br>
+> REST API로 동작하는 클라이언트 개발 프로젝트입니다.
+> <br>간단한 메모 사이트로 작업을 했고 로컬에서 개발된 웹 사이트를 EC2와 RDS를 이용하여</br> > <br>외부에서 접속 가능한 서버에 배포하는 것까지 프로젝트를 진행했습니다.</br>
 
 - index page(empty)
 <p align="center"><img src="https://user-images.githubusercontent.com/85089341/228165597-3c25adb6-3bc9-464c-a7cc-93457a163114.png" width="700" height="350"></p>
