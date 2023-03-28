@@ -1,7 +1,7 @@
-# code_Portfolio
+# code_memohae
 
-> React로 구성된 포트폴리오 용 사이트입니다.
-> <br>효과적으로 PR을 하기 위해서 design과 animation에 집중한 프로젝트입니다.</br>
+> REST API로 동작하는 클라이언트 개발 프로젝트입니다. 간단한 메모 사이트로 작업을 했고,
+> <br>로컬에서 개발된 웹 사이트를 EC2와 RDS를 이용하여 외부에서 접속 가능한 서버에 배포하는 것까지 진행했습니다.</br>
 
 - 보러 가기
   https://sitecreater.github.io/hosting_Portfolio/
