@@ -13,7 +13,7 @@
 <p align="center"><img src="https://user-images.githubusercontent.com/85089341/228166875-02fa2389-6574-4360-9103-f589d614f97d.png" width="700" height="350"></p>
 
 - delete page
-<p align="center"><img src="https://user-images.githubusercontent.com/85089341/222621107-da2061de-a324-4ccf-9d0b-7fd851fa231c.png" width="700" height="350"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/85089341/228167817-3a7becf4-64e9-4155-b38d-ec5344af1295.png" width="700" height="350"></p>
 
 - put page
 <p align="center"><img src="https://user-images.githubusercontent.com/85089341/228167191-ea46e1f2-f9a0-42db-955e-38afd33cd3da.png" width="700" height="350"></p>
