@@ -5,7 +5,7 @@
 > <br>REST API로 동작하는 간단한 메모 프로젝트입니다.</br>
 
 - 개발 과정
-  https://github.com/sitecreater/storage_Drawa.github.io/blob/main/memohae_Process.docx?raw=true
+  https://github.com/sitecreater/storage_Portfolio.github.io/blob/main/memohae_Process.docx?raw=true
 
 - index page(empty)
 <p align="center"><img src="https://user-images.githubusercontent.com/85089341/228165597-3c25adb6-3bc9-464c-a7cc-93457a163114.png" width="700" height="350"></p>
