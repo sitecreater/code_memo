@@ -4,6 +4,9 @@
 > <br>외부에서 접속 가능한 서버에 배포하는 것까지 프로젝트를 진행했습니다.</br>
 > <br>REST API로 동작하는 간단한 메모 프로젝트입니다.</br>
 
+- 개발 과정
+  https://github.com/sitecreater/storage_Drawa.github.io/blob/main/memohae_Process.docx?raw=true
+
 - index page(empty)
 <p align="center"><img src="https://user-images.githubusercontent.com/85089341/228165597-3c25adb6-3bc9-464c-a7cc-93457a163114.png" width="700" height="350"></p>
 
@@ -18,7 +21,3 @@
 
 - edit page(DELETE)
 <p align="center"><img src="https://user-images.githubusercontent.com/85089341/228167817-3a7becf4-64e9-4155-b38d-ec5344af1295.png" width="700" height="350"></p>
-
-
-- 개발 과정
-  https://github.com/sitecreater/storage_Drawa.github.io/blob/main/memohae_Process.docx?raw=true
