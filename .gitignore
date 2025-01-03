@@ -25,8 +25,11 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# local env files
-.env*.local
+# Local environment files
+.env.local
+
+# AWS environment file
+.env.prod
 
 # vercel
 .vercel

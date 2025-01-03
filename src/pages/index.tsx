@@ -35,7 +35,13 @@ const Home = ({ tasks }: Props) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const res = await fetch("http://localhost:3000/api/tasks");
+  const apiUrl = process.env.API_URL || "http://127.0.0.1:3000"; // 기본값 설정
+  const res = await fetch(`${apiUrl}/api/tasks`);
+
+  if (!res.ok) {
+    return { notFound: true };
+  }
+
   const tasks = await res.json();
 
   return {
