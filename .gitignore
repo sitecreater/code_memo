@@ -28,8 +28,8 @@ yarn-error.log*
 # Local environment files
 .env.local
 
-# AWS environment file
-.env.prod
+# # AWS environment file
+.env.production
 
 # vercel
 .vercel
