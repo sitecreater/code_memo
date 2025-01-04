@@ -35,7 +35,11 @@ const Home = ({ tasks }: Props) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const apiUrl = process.env.API_URL || "http://127.0.0.1:3000"; // 기본값 설정
+  if (!process.env.API_URL) {
+    throw new Error("API_URL 환경 변수가 설정되지 않았습니다.");
+  }
+
+  const apiUrl = process.env.API_URL;
   const res = await fetch(`${apiUrl}/api/tasks`);
 
   if (!res.ok) {

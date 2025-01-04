@@ -1,7 +1,7 @@
 const dotenv = require("dotenv");
 
 // 환경 파일 로드
-const path = process.env.NODE_ENV === "production" ? ".env.prod" : ".env.local";
+const path = process.env.NODE_ENV === "production" ? ".env.production" : ".env.local";
 dotenv.config({ path });
 
 console.log("Loaded Environment File:", path);

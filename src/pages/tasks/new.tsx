@@ -17,8 +17,11 @@ const NewPage = (): JSX.Element => {
   const [openConfirm, setOpenConfirm] = useState(false);
   const router = useRouter();
 
+  // API URL from environment variables
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+
   const createTask = async (task: Task) =>
-    await fetch("http://localhost:3000/api/tasks", {
+    await fetch(`${API_URL}/api/tasks`, {
       method: "POST",
       body: JSON.stringify(task),
       headers: {
@@ -27,7 +30,7 @@ const NewPage = (): JSX.Element => {
     });
 
   const updateTask = async (id: string, task: Task) =>
-    await fetch("http://localhost:3000/api/tasks/" + id, {
+    await fetch(`${API_URL}/api/tasks/${id}`, {
       method: "PUT",
       body: JSON.stringify(task),
       headers: {
@@ -41,14 +44,14 @@ const NewPage = (): JSX.Element => {
     setLoading(true);
     try {
       if (typeof router.query.id === "string") {
-        updateTask(router.query.id, task);
+        await updateTask(router.query.id, task);
       } else {
-        createTask(task);
+        await createTask(task);
       }
       setTask(inititalState);
       router.push("/");
     } catch (error) {
-      console.log(error);
+      console.error("Error:", error);
     }
     setLoading(false);
   };
@@ -56,19 +59,24 @@ const NewPage = (): JSX.Element => {
   const handleChange = ({ target: { name, value } }: ChangeInputHandler) => setTask({ ...task, [name]: value });
 
   const loadTask = async (id: string) => {
-    const res = await fetch("http://localhost:3000/api/tasks/" + id);
-    const task = await res.json();
-    setTask({ title: task.title, description: task.description });
+    try {
+      const res = await fetch(`${API_URL}/api/tasks/${id}`);
+      if (!res.ok) throw new Error("Failed to fetch task");
+      const task = await res.json();
+      setTask({ title: task.title, description: task.description });
+    } catch (error) {
+      console.error("Error loading task:", error);
+    }
   };
 
   const handleDelete = async (id: string) => {
     try {
-      const res = await fetch("http://localhost:3000/api/tasks/" + id, {
+      await fetch(`${API_URL}/api/tasks/${id}`, {
         method: "DELETE",
       });
       router.push("/");
     } catch (error) {
-      console.log(error);
+      console.error("Error deleting task:", error);
     }
   };
 
@@ -114,7 +122,6 @@ const NewPage = (): JSX.Element => {
           )}
         </Grid.Column>
       </Grid>
-      {/* ${router.query.id} */}
       <Confirm header="메모 삭제" content={`정말 삭제하시겠습니까?`} open={openConfirm} onCancel={() => setOpenConfirm(false)} onConfirm={() => typeof router.query.id === "string" && handleDelete(router.query.id)} />
     </Layout>
   );
